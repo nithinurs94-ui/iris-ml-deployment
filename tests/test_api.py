@@ -25,3 +25,7 @@ def test_predict_setosa():
 def test_bad_input_is_rejected():
     response = client.post("/predict", json={"sepal_length": -1})
     assert response.status_code == 422
+
+def test_root():
+    response = client.get("/")
+    assert response.status_code == 200

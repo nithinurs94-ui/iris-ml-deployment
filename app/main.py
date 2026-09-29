@@ -16,7 +16,10 @@ target_names = artifact["target_names"]
 # ---------- 2. Create the app ----------
 app = FastAPI(title="Iris Classifier API", version="1.0.0")
 
-
+@app.get("/")
+def root():
+    return {"message": "Iris Classifier API is running. Go to /docs to try it out."}
+    
 # ---------- 3. Describe what input we expect ----------
 class IrisFeatures(BaseModel):
     sepal_length: float = Field(..., gt=0, lt=15, examples=[5.1])
