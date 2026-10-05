@@ -18,7 +18,7 @@ jobs:
           python-version: "3.14"
 
       - name: Install libraries
-        run: pip install -r requirements-dev.txt
+        run: pip install -r requirements-monitoring.txt
 
       - name: Run tests
         run: pytest
